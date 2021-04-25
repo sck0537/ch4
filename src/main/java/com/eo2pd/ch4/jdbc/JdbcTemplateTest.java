@@ -24,8 +24,8 @@ public class JdbcTemplateTest {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 // 获取 AccountDao 实例
 
-        AccountDao accountDao =
-                (AccountDao) applicationContext.getBean("accountDao");
+        IAccountDao accountDao =
+                (IAccountDao) applicationContext.getBean("AccountDao");
 // 创建 Account 对象，并向 Account 对象中添加数据
         Account account = new Account();
         account.setUsername("tom");
@@ -45,8 +45,8 @@ public class JdbcTemplateTest {
         ApplicationContext applicationContext =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 // 获取 AccountDao 实例
-        AccountDao accountDao =
-                (AccountDao) applicationContext.getBean("accountDao");
+        IAccountDao accountDao =
+                (IAccountDao) applicationContext.getBean("AccountDao");
 // 创建 Account 对象，并向 Account 对象中添加数据
         Account account = new Account();
         account.setId(1);
@@ -66,8 +66,8 @@ public class JdbcTemplateTest {
         ApplicationContext applicationContext =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 // 获取 AccountDao 实例
-        AccountDao accountDao =
-                (AccountDao) applicationContext.getBean("accountDao");
+        IAccountDao accountDao =
+                (IAccountDao) applicationContext.getBean("AccountDao");
 // 执行 deleteAccount()方法，并获取返回结果
         int num = accountDao.deleteAccount(1);
         if (num > 0) {
